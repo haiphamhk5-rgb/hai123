@@ -1,8 +1,8 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 const Hero: React.FC = () => {
-  const [heroImg, setHeroImg] = useState<string | null>(null);
-const [loading] = useState(false);
+const [heroImg] = useState<string | null>(null);
+const loading = false;
 
   return (
     <section className="relative h-screen w-full flex items-center justify-start overflow-hidden bg-brand-dark">
