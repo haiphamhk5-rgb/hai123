@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Categories from './components/Categories';
@@ -7,40 +7,6 @@ import UpcomingEvents from './components/UpcomingEvents';
 import Bio from './components/Bio';
 import Story from './components/Story';
 import Footer from './components/Footer';
-import { getDailyMotivation } from './services/geminiService';
-
-const MotivationToast: React.FC = () => {
-  const [motivation, setMotivation] = useState<string>("");
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const fetch = async () => {
-      const msg = await getDailyMotivation();
-      setMotivation(msg);
-      setVisible(true);
-    };
-    fetch();
-    // Đã loại bỏ setTimeout để phần chữ không tự biến mất
-  }, []);
-
-  if (!visible || !motivation) return null;
-
-  return (
-    <div className="fixed bottom-10 left-6 z-[60] max-w-sm transition-all duration-500 ease-out translate-y-0 opacity-100">
-      <div className="bg-brand-red text-white p-6 shadow-2xl relative border-l-4 border-brand-gold">
-        <button 
-          onClick={() => setVisible(false)}
-          className="absolute top-2 right-2 text-white/50 hover:text-white bg-black/20 w-6 h-6 flex items-center justify-center rounded-full transition-colors"
-          aria-label="Đóng"
-        >
-          ✕
-        </button>
-        <p className="font-black uppercase text-[10px] tracking-[0.3em] mb-3 opacity-70 oswald-font">TƯ DUY AI TỪ HẢI PHẠM:</p>
-        <p className="font-bold italic text-lg leading-tight pr-4">"{motivation}"</p>
-      </div>
-    </div>
-  );
-};
 
 const App: React.FC = () => {
   return (
@@ -108,7 +74,6 @@ const App: React.FC = () => {
         </section>
       </main>
       <Footer />
-      <MotivationToast />
     </div>
   );
 };
