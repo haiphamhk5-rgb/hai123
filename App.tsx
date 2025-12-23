@@ -1,7 +1,6 @@
 
 import React from 'react';
 import Header from './components/Header';
-import Hero from './components/Hero';
 import Categories from './components/Categories';
 import UpcomingEvents from './components/UpcomingEvents';
 import Bio from './components/Bio';
@@ -12,9 +11,7 @@ const App: React.FC = () => {
   return (
     <div className="relative min-h-screen bg-white">
       <Header />
-      <main>
-        <Hero />
-        
+      <main>        
         {/* Trusted By Section - High Contrast */}
         <section className="py-16 bg-black border-y border-white/10 overflow-hidden">
           <div className="container mx-auto px-6">
