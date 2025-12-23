@@ -1,0 +1,8 @@
+{
+  "name": "Hải Phạm Master - Khai Phá Sức Mạnh Tiềm Ẩn",
+  "description": "Một trang web phong cách Tony Robbins dành cho Hải Phạm Master, tập trung vào huấn luyện phát triển bản thân, kinh doanh và tạo động lực đột phá.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
