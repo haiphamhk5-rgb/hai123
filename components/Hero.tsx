@@ -1,19 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
-import { generateHeroImage } from '../services/geminiService';
-
 const Hero: React.FC = () => {
   const [heroImg, setHeroImg] = useState<string | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchHero = async () => {
-      const img = await generateHeroImage();
-      if (img) setHeroImg(img);
-      setLoading(false);
-    };
-    fetchHero();
-  }, []);
+const [loading] = useState(false);
 
   return (
     <section className="relative h-screen w-full flex items-center justify-start overflow-hidden bg-brand-dark">
